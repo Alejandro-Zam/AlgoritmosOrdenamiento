@@ -50,7 +50,7 @@ public class MainController {
 		this.main = main;
 	}
 
-    // Método para llenar el ComboBox de Algoritmos
+    // MÃ©todo para llenar el ComboBox de Algoritmos
     private void llenarComboBoxAlgoritmos() {
         ObservableList<String> algoritmos = FXCollections.observableArrayList(
         		"1.TimSort",
@@ -69,8 +69,9 @@ public class MainController {
         BoxAlgoritmos.setItems(algoritmos);
     }
 
-    // Método para llenar el ComboBox de Arreglos
+    // MÃ©todo para llenar el ComboBox de Arreglos
     private void llenarComboBoxArreglos() {
+	//Poner el nombre de los arreglos que vayan a crear
         ObservableList<String> arreglos = FXCollections.observableArrayList(
                 "Arreglo10K", "Arreglo20K", "Arreglo50K", "Arreglo100K"
         );
