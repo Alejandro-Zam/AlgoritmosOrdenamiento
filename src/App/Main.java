@@ -45,7 +45,8 @@ public class Main extends Application {
 
 	public Long EjecutarAlgoritmo(String nameAlogrito, String arregloBuscar){
 
-		String ruta = "C:/Users/Asus/Desktop/Universidad/SemestreVIII/An�lisis de Algoritmos/AlgoritmosOrdenamiento/src/Arreglos/"+arregloBuscar+".dat";
+		//Cambiar la ruta según donde tengan los arreglos
+	String ruta = "C:/Users/Asus/Desktop/Universidad/SemestreVIII/Análisis de Algoritmos/AlgoritmosOrdenamiento/src/Arreglos/"+arregloBuscar+".dat";
         int[] arr = CrearArreglo.leerArregloDesdeArchivo(ruta);
 
         int numAlgoritmo = obtenerNum(nameAlogrito);
@@ -96,7 +97,7 @@ public class Main extends Application {
         case 10:
             // Gnome Sort
         	GnomeSort.gnomeSort(arr, arr.length);
-            // Implementa Gnome Sort aqu�
+            // Implementa Gnome Sort aquí
             break;
         case 11:
             // Binary Insertion Sort
@@ -109,7 +110,7 @@ public class Main extends Application {
 
         }
 
-        // Registra el tiempo actual después de que el algoritmo haya terminado
+        // Registra el tiempo actual despuÃ©s de que el algoritmo haya terminado
         long tiempoFin = System.currentTimeMillis();
 
         // Calcula la diferencia de tiempo en milisegundos
@@ -120,7 +121,7 @@ public class Main extends Application {
 	}
 
 	private int obtenerNum(String cadena) {
-		// Divide la cadena en puntos como separador y obt�n la primera parte.
+		// Divide la cadena en puntos como separador y obtén la primera parte.
 		String[] partes = cadena.split("\\.");
 		if (partes.length > 0) {
 	       String numero = partes[0];
