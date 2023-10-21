@@ -5,14 +5,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
    <children>
-      <TabPane layoutX="1.0" prefHeight="378.0" prefWidth="727.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="1.0" prefHeight="392.0" prefWidth="727.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Selección algoritmo">
             <content>
@@ -38,7 +39,7 @@
           </Tab>
           <Tab text="Tiempo de ejecución">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="727.0">
                      <children>
                         <Label layoutX="14.0" layoutY="65.0" prefHeight="17.0" prefWidth="100.0" text="Tim Sort" />
                         <Button fx:id="BtnCalcular" layoutX="267.0" layoutY="14.0" mnemonicParsing="false" onAction="#onEjecutarOrden" text="Calcular tiempos de ejecución de mayor a menor" />
@@ -48,26 +49,26 @@
                         <Label layoutX="14.0" layoutY="166.0" prefHeight="17.0" prefWidth="100.0" text="Tree Sort" />
                         <Label layoutX="14.0" layoutY="198.0" prefHeight="17.0" prefWidth="100.0" text="Pigeonhole Sort" />
                         <Label layoutX="14.0" layoutY="231.0" prefHeight="17.0" prefWidth="100.0" text="Bucket Sort" />
-                        <TextField fx:id="txtTimSort" layoutX="129.0" layoutY="61.0" />
-                        <TextField fx:id="txtCombSort" layoutX="129.0" layoutY="94.0" />
-                        <TextField fx:id="txtSelectionSort" layoutX="129.0" layoutY="127.0" />
-                        <TextField fx:id="txtTreeSort" layoutX="129.0" layoutY="162.0" />
-                        <TextField fx:id="txtPigeonholeSort" layoutX="129.0" layoutY="194.0" />
-                        <TextField fx:id="txtBucketSort" layoutX="129.0" layoutY="227.0" />
-                        <TextField fx:id="txtQuickSort" layoutX="525.0" layoutY="61.0" />
-                        <TextField fx:id="txtHeapSort" layoutX="525.0" layoutY="94.0" />
-                        <TextField fx:id="txtBitonicSort" layoutX="525.0" layoutY="127.0" />
-                        <TextField fx:id="txtGnomeSort" layoutX="525.0" layoutY="162.0" />
-                        <TextField fx:id="txtBinaryInsertionSort" layoutX="525.0" layoutY="194.0" />
-                        <TextField fx:id="txtRadixSort" layoutX="525.0" layoutY="227.0" />
+                        <TextField fx:id="txtTimSort" editable="false" layoutX="129.0" layoutY="61.0" />
+                        <TextField fx:id="txtCombSort" editable="false" layoutX="129.0" layoutY="94.0" />
+                        <TextField fx:id="txtSelectionSort" editable="false" layoutX="129.0" layoutY="127.0" />
+                        <TextField fx:id="txtTreeSort" editable="false" layoutX="129.0" layoutY="162.0" />
+                        <TextField fx:id="txtPigeonholeSort" editable="false" layoutX="129.0" layoutY="194.0" />
+                        <TextField fx:id="txtBucketSort" editable="false" layoutX="129.0" layoutY="227.0" />
+                        <TextField fx:id="txtQuickSort" editable="false" layoutX="525.0" layoutY="61.0" />
+                        <TextField fx:id="txtHeapSort" editable="false" layoutX="525.0" layoutY="94.0" />
+                        <TextField fx:id="txtBitonicSort" editable="false" layoutX="525.0" layoutY="127.0" />
+                        <TextField fx:id="txtGnomeSort" editable="false" layoutX="525.0" layoutY="162.0" />
+                        <TextField fx:id="txtBinaryInsertionSort" editable="false" layoutX="525.0" layoutY="194.0" />
+                        <TextField fx:id="txtRadixSort" editable="false" layoutX="525.0" layoutY="227.0" />
                         <Label layoutX="364.0" layoutY="65.0" prefHeight="17.0" prefWidth="100.0" text="Quick Sort" />
                         <Label layoutX="364.0" layoutY="98.0" prefHeight="17.0" prefWidth="100.0" text="Heap Sort" />
                         <Label layoutX="364.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" text="Bitonic Sort" />
                         <Label layoutX="364.0" layoutY="166.0" prefHeight="17.0" prefWidth="100.0" text="Gnome Sort" />
                         <Label layoutX="364.0" layoutY="198.0" prefHeight="17.0" prefWidth="120.0" text="Binary Insertion Sort" />
                         <Label layoutX="364.0" layoutY="231.0" text="Radix Sort" />
-                        <Label layoutX="14.0" layoutY="266.0" text="El orden de los algoritmos para esta ejecución según su tiempo de ejecución (de mayor a menor) va de la siguiente manera:" />
-                        <TextField fx:id="txtResultadoOrden" layoutX="14.0" layoutY="290.0" prefHeight="46.0" prefWidth="686.0" />
+                        <Label layoutX="14.0" layoutY="269.0" text="El orden de los algoritmos para esta ejecución según su tiempo de ejecución (de mayor a menor) va de la siguiente manera:" />
+                        <TextArea fx:id="txtAreaResultado" editable="false" layoutX="14.0" layoutY="302.0" prefHeight="47.0" prefWidth="669.0" wrapText="true" />
                      </children>
                   </AnchorPane>
             </content>

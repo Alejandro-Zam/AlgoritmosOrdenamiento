@@ -98,7 +98,6 @@ public class Main extends Application {
 		case 10:
 			// Gnome Sort
 			GnomeSort.gnomeSort(arr, arr.length);
-			// Implementa Gnome Sort aquí
 			break;
 		case 11:
 			// Binary Insertion Sort
@@ -189,7 +188,6 @@ public class Main extends Application {
 			// Gnome Sort 
 			tiempoInicio = System.currentTimeMillis();
 			GnomeSort.gnomeSort(arr, arr.length);
-			// Implementa Gnome Sort aquí
 			tiempoFin = System.currentTimeMillis();
 			sorts.add(new KeyValue("Gnome Sort", (tiempoFin - tiempoInicio)));
 

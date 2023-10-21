@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 public class MainController {
 
@@ -37,6 +38,9 @@ public class MainController {
 
     @FXML
     private Label LblOrden;
+    
+    @FXML
+    private TextArea txtAreaResultado;
 
     @FXML
     private TextField txtBinaryInsertionSort;
@@ -64,9 +68,6 @@ public class MainController {
 
     @FXML
     private TextField txtRadixSort;
-    
-    @FXML
-    private TextField txtResultadoOrden;
 
     @FXML
     private TextField txtSelectionSort;
@@ -99,7 +100,6 @@ public class MainController {
      */
 	@FXML
     void onEjecutarOrden(ActionEvent event) {
-//		txtResultadoOrden.setText("");
 		String arreglo	 = BoxArreglo2.getValue();
 		
 		ArrayList<KeyValue> sorts = main.EjecutarOrden(arreglo);
@@ -122,7 +122,7 @@ public class MainController {
 		txtRadixSort.setText(""+tiempos[11]);
 		
 		String orden = main.ordenarTiempos(tiempos, sorts);
-		txtResultadoOrden.setText(orden);
+		txtAreaResultado.setText(orden);
 		
 		System.out.println(orden);
     }
@@ -164,9 +164,13 @@ public class MainController {
     private void llenarComboBoxArreglos() {
 	//Poner el nombre de los arreglos que vayan a crear
         ObservableList<String> arreglos = FXCollections.observableArrayList(
-                "Arreglo10K", "Arreglo20K", "Arreglo50K", "Arreglo100K"
+                "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K"
         );
         BoxArreglo.setItems(arreglos);
-        BoxArreglo2.setItems(arreglos);
+        
+        ObservableList<String> arreglos2 = FXCollections.observableArrayList(
+                "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K"
+        );
+        BoxArreglo2.setItems(arreglos2);
     }
 }
