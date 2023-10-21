@@ -6,18 +6,14 @@ import java.util.Random;
 public class CrearArreglo {
 
     public static void main(String[] args) {
-        int tamanio = 500000;  // Cambia este valor al número de posiciones que necesitas
+        int tamanio = 500000;  // Cambiar este valor al número de posiciones necesarias
         int[] miArreglo = new int[tamanio];
 
+        //llena y almacena el arreglo en el directorio actual
         llenarArregloConAleatorios(miArreglo);
         almacenarArregloEnArchivo(miArreglo, "Arreglo500K.dat");
-        int[] arregloLeido = leerArregloDesdeArchivo("Arreglo500k.dat");
+        int[] arregloLeido = leerArregloDesdeArchivo("Arreglo500K.dat");
 
-        //Ejemplo: Imprimir algunos elementos del arreglo leído
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Elemento " + i*1200 + ": " + arregloLeido[i*1200]);
-        }
-        
         //saber dónde se están almacenando los arreglos por si se inicializa mal el directorio de trabajo
         System.out.println("Directorio actual de trabajo: " + System.getProperty("user.dir"));
 

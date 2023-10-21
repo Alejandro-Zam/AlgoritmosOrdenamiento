@@ -79,7 +79,7 @@ public class Main extends Application {
 			sort.pigeonhole_sort(arr, arr.length);
 			break;
 		case 6:
-			// BucketSort
+			// BuckertSort
 			BuckertSort.bucketSort(arr, arr.length);
 			break;
 		case 7:

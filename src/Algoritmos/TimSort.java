@@ -4,8 +4,7 @@ package Algoritmos;
 public class TimSort {
     static int MIN_MERGE = 32;
 
-    public static int minRunLength(int n)
-    {
+    public static int minRunLength(int n){
         assert n >= 0;
 
         // Se convierte en 1 si se desplazan 1 bits
@@ -19,9 +18,7 @@ public class TimSort {
 
     // Esta función ordena la matriz desde el índice izquierdo hasta
     // al índice derecho que tiene un tamaño máximo RUN
-    public static void insertionSort(int[] arr, int left,
-                                     int right)
-    {
+    public static void insertionSort(int[] arr, int left, int right){
         for (int i = left + 1; i <= right; i++) {
             int temp = arr[i];
             int j = i - 1;
@@ -34,8 +31,7 @@ public class TimSort {
     }
 
     // La función de combinación fusiona las ejecuciones ordenadas
-    public static void merge(int[] arr, int l, int m, int r)
-    {
+    public static void merge(int[] arr, int l, int m, int r){
         // La matriz original está dividida en dos partes
         // matriz izquierda y derecha
         int len1 = m - l + 1, len2 = r - m;
@@ -85,8 +81,7 @@ public class TimSort {
 
     // Función Timsort iterativa para ordenar el
     // matriz[0...n-1] (similar a ordenar por combinación)
-    public static void timSort(int[] arr, int n)
-    {
+    public static void timSort(int[] arr, int n){
         int minRun = minRunLength(MIN_MERGE);
 
         // Ordenar subarreglos individuales de tamaño RUN
@@ -128,49 +123,12 @@ public class TimSort {
     }
 
     //Imprimir arreglo
-    public static void printArray(int[] arr, int n)
-    {
+    public static void printArray(int[] arr, int n){
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.print("\n");
     }
 
-    // Driver code
-    public static void main(String[] args)
-    {
-        //Leer el arreglo de 10 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo10k.dat");
-
-        //Leer el arreglo de 20 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo20k.dat");
-
-        //Leer el arreglo de 50 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo50k.dat");
-
-        //Leer el arreglo de 100 mil elementos
-        final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo100k.dat");
-
-        // Registra el tiempo actual antes de ejecutar el algoritmo
-        long tiempoInicio = System.currentTimeMillis();
-
-        //Ejecución del algoritmo
-        int n = arr.length;
-        timSort(arr, n);
-
-        // Registra el tiempo actual después de que el algoritmo haya terminado
-        long tiempoFin = System.currentTimeMillis();
-
-        // Calcula la diferencia de tiempo en milisegundos
-        long tiempoTotal = tiempoFin - tiempoInicio;
-
-        System.out.println("Tiempo de Ejecución para el algoritmo Tim Sort (Milesegundos): "+ tiempoTotal);
-
-
-        //System.out.println("Given Array is");
-        //printArray(arr, n);
-        //System.out.println("After Sorting Array is");
-        //printArray(arr, n);
-    }
 }
 

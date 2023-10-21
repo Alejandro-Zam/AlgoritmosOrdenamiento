@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class RadixSort {
     // A utility function to get maximum value in arr[]
-    static int getMax(int arr[], int n)
-    {
+    static int getMax(int arr[], int n){
         int mx = arr[0];
         for (int i = 1; i < n; i++)
             if (arr[i] > mx)
@@ -15,8 +14,7 @@ public class RadixSort {
 
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
-    static void countSort(int arr[], int n, int exp)
-    {
+    static void countSort(int arr[], int n, int exp) {
         int output[] = new int[n]; // output array
         int i;
         int count[] = new int[10];
@@ -32,8 +30,7 @@ public class RadixSort {
             count[i] += count[i - 1];
 
         // Build the output array
-        for (i = n - 1; i >= 0; i--)
-        {
+        for (i = n - 1; i >= 0; i--){
             output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
             count[ (arr[i]/exp)%10 ]--;
         }
@@ -46,8 +43,7 @@ public class RadixSort {
 
     // The main function to that sorts arr[] of size n using
     // Radix Sort
-    public static void radixsort(int arr[], int n)
-    {
+    public static void radixsort(int arr[], int n){
         // Find the maximum number to know number of digits
         int m = getMax(arr, n);
 
@@ -59,42 +55,8 @@ public class RadixSort {
     }
 
     // A utility function to print an array
-    static void print(int arr[], int n)
-    {
+    static void print(int arr[], int n){
         for (int i=0; i<n; i++)
             System.out.print(arr[i]+" ");
-    }
-
-
-    /*Driver function to check for above function*/
-    public static void main (String[] args)
-    {
-        //Leer el arreglo de 10 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo10k.dat");
-
-        //Leer el arreglo de 20 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo20k.dat");
-
-        //Leer el arreglo de 50 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo50k.dat");
-
-        //Leer el arreglo de 100 mil elementos
-        final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo100k.dat");
-
-        // Registra el tiempo actual antes de ejecutar el algoritmo
-        long tiempoInicio = System.currentTimeMillis();
-
-        //Ejecución del algoritmo
-        int n = arr.length;
-        radixsort(arr, n);
-
-        // Registra el tiempo actual después de que el algoritmo haya terminado
-        long tiempoFin = System.currentTimeMillis();
-
-        // Calcula la diferencia de tiempo en milisegundos
-        long tiempoTotal = tiempoFin - tiempoInicio;
-
-        System.out.println("Tiempo de Ejecución para el algoritmo Randix Sort (Milesegundos): "+ tiempoTotal);
-
     }
 }

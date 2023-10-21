@@ -74,41 +74,4 @@ public class QuickSort {
             }
         }
     }
-
-    // Driver code
-    public static void main(String args[]) {
-
-        //Leer el arreglo de 10 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo10k.dat");
-
-        //Leer el arreglo de 20 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo20k.dat");
-
-        //Leer el arreglo de 50 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo50k.dat");
-
-        //Leer el arreglo de 100 mil elementos
-    	String ruta = "C:/Users/Asus/Desktop/Universidad/SemestreVIII/An·lisis de Algoritmos/AlgoritmosOrdenamiento/src/Arreglo100K.dat";
-        final int[] arr = CrearArreglo.leerArregloDesdeArchivo(ruta);
-
-        // Registra el tiempo actual antes de ejecutar el algoritmo
-        long tiempoInicio = System.currentTimeMillis();
-
-        //Ejecuci√≥n del algoritmo
-        int n = arr.length;
-        quickSortIterative(arr, 0, n - 1);
-
-        // Registra el tiempo actual despu√©s de que el algoritmo haya terminado
-        long tiempoFin = System.currentTimeMillis();
-
-        // Calcula la diferencia de tiempo en milisegundos
-        long tiempoTotal = tiempoFin - tiempoInicio;
-
-        System.out.println("Tiempo de EjecuciÛn para el algoritmo Quick Sort (Milesegundos): "+ tiempoTotal);
-
-
-        /*for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }*/
-    }
 }
