@@ -2,81 +2,63 @@ package Algoritmos;
 
 //Obtenido de: https://www.geeksforgeeks.org/tree-sort/?ref=gcse
 public class TreeSort {
-    // Class containing left and
-    // right child of current
-    // node and key value
-    class Node
-    {
+    // Clase que representa un nodo en el árbol
+    class Node {
         int key;
         Node left, right;
 
-        public Node(int item)
-        {
+        public Node(int item) {
             key = item;
             left = right = null;
         }
     }
 
-    // Root of BST
+    // Raíz del árbol BST
     Node root;
 
     // Constructor
-    public TreeSort()
-    {
+    public TreeSort() {
         root = null;
     }
 
-    // This method mainly
-    // calls insertRec()
-    void insert(int key)
-    {
+    // Método para insertar un elemento en el árbol
+    void insert(int key) {
         root = insertRec(root, key);
     }
 
-    /* A recursive function to
-    insert a new key in BST */
-    Node insertRec(Node root, int key)
-    {
-
-        /* If the tree is empty,
-        return a new node */
-        if (root == null)
-        {
+    // Función recursiva para insertar un nuevo nodo en el árbol
+    Node insertRec(Node root, int key) {
+        // Si el árbol está vacío, crea un nuevo nodo y lo retorna
+        if (root == null) {
             root = new Node(key);
             return root;
         }
 
-        /* Otherwise, recur
-        down the tree */
+        // De lo contrario, recorre el árbol hacia abajo
         if (key < root.key)
             root.left = insertRec(root.left, key);
         else if (key > root.key)
             root.right = insertRec(root.right, key);
 
-        /* return the root */
+        // Retorna la raíz
         return root;
     }
 
-    // A function to do
-    // inorder traversal of BST
-    void inorderRec(Node root)
-    {
-        if (root != null)
-        {
+    // Función para realizar el recorrido en orden del árbol
+    void inorderRec(Node root) {
+        if (root != null) {
             inorderRec(root.left);
             System.out.print(root.key + " ");
             inorderRec(root.right);
         }
     }
-    public void treeins(int arr[])
-    {
-        for(int i = 0; i < arr.length; i++)
-        {
+
+    // Función para ordenar un arreglo utilizando TreeSort
+    public void treeSort(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
             insert(arr[i]);
         }
-
     }
-
     // Driver Code
     public static void main(String[] args)
     {
@@ -97,7 +79,7 @@ public class TreeSort {
 
         //EjecuciÃ³n del algoritmo
         TreeSort tree = new TreeSort();
-        tree.treeins(arr);
+        tree.treeSort(arr);
 
         // Registra el tiempo actual despuÃ©s de que el algoritmo haya terminado
         long tiempoFin = System.currentTimeMillis();
