@@ -1,5 +1,9 @@
-/View/
-/Controller/
-/App/
 /Algoritmos/
+<<<<<<< HEAD
 /Arreglos/
+=======
+/App/
+/Arreglos/
+/Controller/
+/View/
+>>>>>>> upstream/main

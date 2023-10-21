@@ -38,7 +38,7 @@ public class MainController {
 
     @FXML
     private Label LblOrden;
-    
+
     @FXML
     private TextArea txtAreaResultado;
 
@@ -93,7 +93,7 @@ public class MainController {
 		labelTime.setText(""+tiempo);
 
 	}
-	
+
 	/**
      * Calcular el tiempo de ejecución de todos los algoritmos al tiempo y ordenarlos
      * @param event
@@ -101,17 +101,17 @@ public class MainController {
 	@FXML
     void onEjecutarOrden(ActionEvent event) {
 		String arreglo	 = BoxArreglo2.getValue();
-		
+
 		ArrayList<KeyValue> sorts = main.EjecutarOrden(arreglo);
-		
+
 		long[] tiempos = new long[12];
 		tiempos = main.obtenerTiempos(sorts);
-		
+
 		//settea los campos con el tiempo de ejecución en ms que se demoraron dado el tamaño del arreglo
-		txtTimSort.setText(""+tiempos[0]);
-		txtCombSort.setText(""+tiempos[1]);
-		txtSelectionSort.setText(""+tiempos[2]);
-		txtTreeSort.setText(""+tiempos[3]);
+		txtTreeSort.setText(""+tiempos[0]);
+		txtTimSort.setText(""+tiempos[1]);
+		txtCombSort.setText(""+tiempos[2]);
+		txtSelectionSort.setText(""+tiempos[3]);
 		txtPigeonholeSort.setText(""+tiempos[4]);
 		txtBucketSort.setText(""+tiempos[5]);
 		txtQuickSort.setText(""+tiempos[6]);
@@ -120,10 +120,10 @@ public class MainController {
 		txtGnomeSort.setText(""+tiempos[9]);
 		txtBinaryInsertionSort.setText(""+tiempos[10]);
 		txtRadixSort.setText(""+tiempos[11]);
-		
+
 		String orden = main.ordenarTiempos(tiempos, sorts);
 		txtAreaResultado.setText(orden);
-		
+
 		System.out.println(orden);
     }
 
@@ -167,9 +167,9 @@ public class MainController {
                 "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K"
         );
         BoxArreglo.setItems(arreglos);
-        
+
         ObservableList<String> arreglos2 = FXCollections.observableArrayList(
-                "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K"
+                "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K"
         );
         BoxArreglo2.setItems(arreglos2);
     }

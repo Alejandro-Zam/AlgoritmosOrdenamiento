@@ -9,19 +9,20 @@ public class PigeonholeSort {
         int max = arr[0];
         int range, i, j, index;
 
+        //recorre el arreglo hallando el valor mínimo y máximo en él
         for(int a=0; a<n; a++){
-            if(arr[a] > max)
-                max = arr[a];
-            if(arr[a] < min)
-                min = arr[a];
+            if(arr[a] > max) max = arr[a];
+            if(arr[a] < min) min = arr[a];
         }
 
+        //determina el rango de valores posibles en el arreglo original
         range = max - min + 1;
+        //declara un nuevo arreglo y lo llena de ceros
         int[] phole = new int[range];
         Arrays.fill(phole, 0);
 
-        for(i = 0; i<n; i++)
-            phole[arr[i] - min]++;
+        //recorre el tamaño del arreglo original reajustando los índices
+        for(i = 0; i<n; i++) phole[arr[i] - min]++;
 
         index = 0;
 
