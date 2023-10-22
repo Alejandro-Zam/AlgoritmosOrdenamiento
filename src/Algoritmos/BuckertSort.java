@@ -32,7 +32,7 @@ public class BuckertSort {
             buckets[i] = new ArrayList<Integer>();
         }
 
-        // 3) Colocar los elementos del arreglo en los diferentes buckets
+        // 3) Colocar los elementos del arreglo en los diferentes buckets en la posicion correspondiente del rango
         for (int i = 0; i < n; i++) {
             buckets[arr[i] - minVal].add(arr[i]);
         }
@@ -49,38 +49,5 @@ public class BuckertSort {
                 arr[index++] = buckets[i].get(j);
             }
         }
-    }
-
-    // Driver code
-    public static void main(String args[]) {
-
-        //Leer el arreglo de 10 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo10k.dat");
-
-        //Leer el arreglo de 20 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo20k.dat");
-
-        //Leer el arreglo de 50 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo50k.dat");
-
-        //Leer el arreglo de 100 mil elementos
-        final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo100k.dat");
-
-
-        // Registra el tiempo actual antes de ejecutar el algoritmo
-        long tiempoInicio = System.currentTimeMillis();
-
-        //Ejecución del algoritmo
-        int n = arr.length;
-        bucketSort(arr, n);
-
-        // Registra el tiempo actual después de que el algoritmo haya terminado
-        long tiempoFin = System.currentTimeMillis();
-
-        // Calcula la diferencia de tiempo en milisegundos
-        long tiempoTotal = tiempoFin - tiempoInicio;
-
-        System.out.println("Tiempo de Ejecución para el algoritmo Buckert Sort (Milesegundos): "+ tiempoTotal);
-
     }
 }
