@@ -7,9 +7,12 @@ public class CrearArreglo {
 
     public static void main(String[] args) {
         int tamanio = 2000000;  // Cambia este valor al número de posiciones que necesitas
+
         int[] miArreglo = new int[tamanio];
 
+        //llena y almacena el arreglo en el directorio actual
         llenarArregloConAleatorios(miArreglo);
+
         almacenarArregloEnArchivo(miArreglo, "Arreglo2M.dat");
       //  int[] arregloLeido = leerArregloDesdeArchivo("Arreglo500k.dat");
 
@@ -17,6 +20,10 @@ public class CrearArreglo {
        /* for (int i = 0; i < 10; i++) {
             System.out.println("Elemento " + i*1200 + ": " + arregloLeido[i*1200]);
         }*/
+
+
+        almacenarArregloEnArchivo(miArreglo, "Arreglo500K.dat");
+        int[] arregloLeido = leerArregloDesdeArchivo("Arreglo500K.dat");
 
         //saber dónde se están almacenando los arreglos por si se inicializa mal el directorio de trabajo
         System.out.println("Directorio actual de trabajo: " + System.getProperty("user.dir"));

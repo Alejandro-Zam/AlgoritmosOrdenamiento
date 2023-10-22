@@ -47,7 +47,7 @@ public class Main extends Application {
 	public Long EjecutarAlgoritmo(String nameAlogrito, String arregloBuscar){
 
 		//Cambiar la ruta seg√∫n donde tengan los arreglos
-		String ruta = "C:/Users/Asus/Desktop/Universidad/SemestreVIII/An·lisis de Algoritmos/022-Seguimiento/AlgoritmosOrdenamiento/src/Arreglos/"+arregloBuscar+".dat";
+		String ruta = "C:/Users/Felipe/Desktop/UNI/Algoritmos/Seguimiento/AlgoritmosOrdenamiento/src/Arreglos/"+arregloBuscar+".dat";
 		int[] arr = CrearArreglo.leerArregloDesdeArchivo(ruta);
 
 		int numAlgoritmo = obtenerNum(nameAlogrito);
@@ -79,7 +79,7 @@ public class Main extends Application {
 			sort.pigeonhole_sort(arr, arr.length);
 			break;
 		case 6:
-			// BucketSort
+			// BuckertSort
 			BuckertSort.bucketSort(arr, arr.length);
 			break;
 		case 7:
@@ -122,98 +122,96 @@ public class Main extends Application {
 
 	public ArrayList<KeyValue> EjecutarOrden(String arreglo) {
 		ArrayList<KeyValue> sorts = new ArrayList<>();
-		if(arreglo != "Todos") {
-			String ruta = "C:/Users/Asus/Desktop/Universidad/SemestreVIII/An·lisis de Algoritmos/022-Seguimiento/AlgoritmosOrdenamiento/src/Arreglos/"+arreglo+".dat";
-			long tiempoInicio, tiempoFin;
+		String ruta = "C:/Users/Felipe/Desktop/UNI/Algoritmos/Seguimiento/AlgoritmosOrdenamiento/src/Arreglos/"+arreglo+".dat";
+		long tiempoInicio, tiempoFin;
 
-			// Tree Sort 0
-			int[] arr0 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			TreeSort tree = new TreeSort();
-			tree.treeSort(arr0);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Tree Sort", (tiempoFin - tiempoInicio)));
+		// Tree Sort 0
+		int[] arr0 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		TreeSort tree = new TreeSort();
+		tree.treeSort(arr0);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Tree Sort", (tiempoFin - tiempoInicio)));
 
-			// Tim Sort 1
-			int[] arr1 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			TimSort.timSort(arr1, arr1.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Tim Sort", (tiempoFin - tiempoInicio)));
+		// Tim Sort 1
+		int[] arr1 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		TimSort.timSort(arr1, arr1.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Tim Sort", (tiempoFin - tiempoInicio)));
 
-			// Comb Sort 2
-			int[] arr2 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			CombSort ob = new CombSort();
-			ob.sort(arr2);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Comb Sort", (tiempoFin - tiempoInicio)));
+		// Comb Sort 2
+		int[] arr2 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		CombSort ob = new CombSort();
+		ob.sort(arr2);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Comb Sort", (tiempoFin - tiempoInicio)));
 
-			// Selection Sort 3
-			int[] arr3 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			SelectSort.stableSelectionSort(arr3, arr3.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Selection Sort", (tiempoFin - tiempoInicio)));
+		// Selection Sort 3
+		int[] arr3 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		SelectSort.stableSelectionSort(arr3, arr3.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Selection Sort", (tiempoFin - tiempoInicio)));
 
-			// Pigeonhole Sort 4
-			int[] arr4 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			PigeonholeSort sort = new PigeonholeSort();
-			sort.pigeonhole_sort(arr4, arr4.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Pigeonhole Sort", (tiempoFin - tiempoInicio)));
+		// Pigeonhole Sort 4
+		int[] arr4 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		PigeonholeSort sort = new PigeonholeSort();
+		sort.pigeonhole_sort(arr4, arr4.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Pigeonhole Sort", (tiempoFin - tiempoInicio)));
 
-			// Bucket Sort 5
-			int[] arr5 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			BuckertSort.bucketSort(arr5, arr5.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Bucket Sort", (tiempoFin - tiempoInicio)));
+		// Bucket Sort 5
+		int[] arr5 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		BuckertSort.bucketSort(arr5, arr5.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Bucket Sort", (tiempoFin - tiempoInicio)));
 
-			// Quick Sort 6
-			int[] arr6 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			QuickSort.quickSortIterative(arr6, 0, arr6.length - 1);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Quick Sort", (tiempoFin - tiempoInicio)));
+		// Quick Sort 6
+		int[] arr6 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		QuickSort.quickSortIterative(arr6, 0, arr6.length - 1);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Quick Sort", (tiempoFin - tiempoInicio)));
 
-			// Heap Sort 7
-			int[] arr7 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			HeapSort.heapSort(arr7, arr7.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Heap Sort", (tiempoFin - tiempoInicio)));
+		// Heap Sort 7
+		int[] arr7 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		HeapSort.heapSort(arr7, arr7.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Heap Sort", (tiempoFin - tiempoInicio)));
 
-			// Bitonic Sort 8
-			int[] arr8 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			BitonicSort ob2 = new BitonicSort();
-			ob2.sort(arr8, arr8.length,1);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Bitonic Sort", (tiempoFin - tiempoInicio)));
+		// Bitonic Sort 8
+		int[] arr8 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		BitonicSort ob2 = new BitonicSort();
+		ob2.sort(arr8, arr8.length,1);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Bitonic Sort", (tiempoFin - tiempoInicio)));
 
-			//Gnome Sort 9
-			int[] arr9 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			GnomeSort.gnomeSort(arr9, arr9.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Gnome Sort", (tiempoFin - tiempoInicio)));
+		// Gnome Sort 9
+		int[] arr9 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		GnomeSort.gnomeSort(arr9, arr9.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Gnome Sort", (tiempoFin - tiempoInicio)));
 
-			// Binary Insertion Sort 10
-			int[] arr10 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			BinaryInsertionSort.sort(arr10);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Binary Insertion Sort", (tiempoFin - tiempoInicio)));
+		// Binary Insertion Sort 10
+		int[] arr10 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		BinaryInsertionSort.sort(arr10);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Binary Insertion Sort", (tiempoFin - tiempoInicio)));
 
-			// Radix Sort 11
-			int[] arr11 = CrearArreglo.leerArregloDesdeArchivo(ruta);
-			tiempoInicio = System.currentTimeMillis();
-			RadixSort.radixsort(arr11, arr11.length);
-			tiempoFin = System.currentTimeMillis();
-			sorts.add(new KeyValue("Radix Sort", (tiempoFin - tiempoInicio)));
-		}
+		// Radix Sort 11
+		int[] arr11 = CrearArreglo.leerArregloDesdeArchivo(ruta);
+		tiempoInicio = System.currentTimeMillis();
+		RadixSort.radixsort(arr11, arr11.length);
+		tiempoFin = System.currentTimeMillis();
+		sorts.add(new KeyValue("Radix Sort", (tiempoFin - tiempoInicio)));
 
 		return sorts;
 	}

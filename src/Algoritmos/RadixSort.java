@@ -3,9 +3,8 @@ package Algoritmos;
 import java.util.Arrays;
 
 public class RadixSort {
-    // A utility function to get maximum value in arr[]
-    static int getMax(int arr[], int n)
-    {
+    // función para obtener el valor más grande dentro de un arreglo
+    static int getMax(int arr[], int n){
         int mx = arr[0];
         for (int i = 1; i < n; i++)
             if (arr[i] > mx)
@@ -13,88 +12,38 @@ public class RadixSort {
         return mx;
     }
 
-    // A function to do counting sort of arr[] according to
-    // the digit represented by exp.
-    static void countSort(int arr[], int n, int exp)
-    {
-        int output[] = new int[n]; // output array
+    static void countSort(int arr[], int n, int exp) {
+        int output[] = new int[n]; //array resultante
         int i;
         int count[] = new int[10];
         Arrays.fill(count,0);
 
-        // Store count of occurrences in count[]
+        // Almacena el recuento de ocurrencias en count[]
         for (i = 0; i < n; i++)
             count[ (arr[i]/exp)%10 ]++;
 
-        // Change count[i] so that count[i] now contains
-        // actual position of this digit in output[]
+        //Almacena las ocurrencias en las posiciones que son
         for (i = 1; i < 10; i++)
             count[i] += count[i - 1];
 
-        // Build the output array
-        for (i = n - 1; i >= 0; i--)
-        {
+        // Construye el array de salida
+        for (i = n - 1; i >= 0; i--){
             output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
             count[ (arr[i]/exp)%10 ]--;
         }
 
-        // Copy the output array to arr[], so that arr[] now
-        // contains sorted numbers according to current digit
+        //copia el arreglo de salida al original
         for (i = 0; i < n; i++)
             arr[i] = output[i];
     }
 
-    // The main function to that sorts arr[] of size n using
-    // Radix Sort
-    public static void radixsort(int arr[], int n)
-    {
-        // Find the maximum number to know number of digits
+    public static void radixsort(int arr[], int n){
+        // Encuentra el máximo valor en el arreglo
         int m = getMax(arr, n);
 
-        // Do counting sort for every digit. Note that instead
-        // of passing digit number, exp is passed. exp is 10^i
-        // where i is current digit number
+        //calcula el exp y llama a la función para reorganizar el arreglo
+        //hasta que exp sea menor o igual que 0
         for (int exp = 1; m/exp > 0; exp *= 10)
             countSort(arr, n, exp);
-    }
-
-    // A utility function to print an array
-    static void print(int arr[], int n)
-    {
-        for (int i=0; i<n; i++)
-            System.out.print(arr[i]+" ");
-    }
-
-
-    /*Driver function to check for above function*/
-    public static void main (String[] args)
-    {
-        //Leer el arreglo de 10 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo10k.dat");
-
-        //Leer el arreglo de 20 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo20k.dat");
-
-        //Leer el arreglo de 50 mil elementos
-        //final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo50k.dat");
-
-        //Leer el arreglo de 100 mil elementos
-        final int[] arr = CrearArreglo.leerArregloDesdeArchivo("Arreglo100k.dat");
-
-        // Registra el tiempo actual antes de ejecutar el algoritmo
-        long tiempoInicio = System.currentTimeMillis();
-
-        //Ejecución del algoritmo
-        int n = arr.length;
-        radixsort(arr, n);
-
-        // Registra el tiempo actual después de que el algoritmo haya terminado
-        long tiempoFin = System.currentTimeMillis();
-
-        // Calcula la diferencia de tiempo en milisegundos
-        long tiempoTotal = tiempoFin - tiempoInicio;
-
-        System.out.println("Tiempo de Ejecución para el algoritmo Randix Sort (Milesegundos): "+ tiempoTotal);
-
     }
 }
