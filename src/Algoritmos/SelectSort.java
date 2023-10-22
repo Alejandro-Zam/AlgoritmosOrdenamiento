@@ -3,26 +3,21 @@ package Algoritmos;
 //Obtenido de: https://www.geeksforgeeks.org/stable-selection-sort/?ref=gcse
 public class SelectSort {
     public static void stableSelectionSort(int[] a, int n){
-        // Iterate through array elements
         for (int i = 0; i < n - 1; i++){
-
-            // Loop invariant : Elements till
-            // a[i - 1] are already sorted.
-
-            // Find minimum element from
-            // arr[i] to arr[n - 1].
+        	//Encuentra el índice del mínimo valor en el arreglo a partir de la posición i
             int min = i;
             for (int j = i + 1; j < n; j++)
                 if (a[min] > a[j])
                     min = j;
 
-            // Move minimum element at current i.
-            int key = a[min];
+            
+            int key = a[min]; //almacena el menor valor
+            //corre los elementos delante del mínimo para liberar la posición i
             while (min > i){
-                a[min] = a[min - 1];
+                a[min] = a[min - 1]; 
                 min--;
             }
-
+            //almacena el mínimo en la posición i
             a[i] = key;
         }
     }

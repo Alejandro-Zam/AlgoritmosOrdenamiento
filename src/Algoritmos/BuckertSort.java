@@ -32,7 +32,7 @@ public class BuckertSort {
             buckets[i] = new ArrayList<Integer>();
         }
 
-        // 3) Colocar los elementos del arreglo en los diferentes buckets
+        // 3) Colocar los elementos del arreglo en los diferentes buckets en la posicion correspondiente del rango
         for (int i = 0; i < n; i++) {
             buckets[arr[i] - minVal].add(arr[i]);
         }

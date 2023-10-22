@@ -26,6 +26,7 @@ public class PigeonholeSort {
 
         index = 0;
 
+        //organiza lo que hay en phole al arreglo original
         for(j = 0; j<range; j++)
             while(phole[j]-->0)
                 arr[index++]=j+min;

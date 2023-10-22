@@ -3,45 +3,33 @@ package Algoritmos;
 // Obtenido de: https://www.geeksforgeeks.org/comb-sort/?ref=gcse
 import java.io.*;
 public class CombSort{
-    // To find gap between elements
+    // Encontrar la brecha entre elementos
     int getNextGap(int gap){
-        // Shrink gap by Shrink factor
+        // Reduce la brecha por el factor reductor (aproximar a número áureo)
         gap = (gap*10)/13;
         if (gap < 1)
             return 1;
         return gap;
     }
 
-    // Function to sort arr[] using Comb Sort
     public void sort(int arr[]){
         int n = arr.length;
-
-        // initialize gap
         int gap = n;
-
-        // Initialize swapped as true to make sure that
-        // loop runs
         boolean swapped = true;
 
-        // Keep running while gap is more than 1 and last
-        // iteration caused a swap
+        // Evalúa si se produjo un intercambio y si la brecha es mayor a 1
         while (gap != 1 || swapped == true){
-            // Find next gap
+            //Actualiza la brecha cada iteración
             gap = getNextGap(gap);
-
-            // Initialize swapped as false so that we can
-            // check if swap happened or not
             swapped = false;
 
-            // Compare all elements with current gap
             for (int i=0; i<n-gap; i++){
-                if (arr[i] > arr[i+gap]){
-                    // Swap arr[i] and arr[i+gap]
+                if (arr[i] > arr[i+gap]){ //compara si el elemento actual es mayor al siguiente de la brecha y realiza el intercambio
                     int temp = arr[i];
                     arr[i] = arr[i+gap];
                     arr[i+gap] = temp;
 
-                    // Set swapped
+                    //verifica que hubo interambio
                     swapped = true;
                 }
             }

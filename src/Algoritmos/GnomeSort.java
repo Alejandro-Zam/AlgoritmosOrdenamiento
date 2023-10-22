@@ -11,9 +11,10 @@ public class GnomeSort {
         while (index < n) {
             if (index == 0)
                 index++;
-            if (arr[index] >= arr[index - 1])
+            //aumenta el indice si el elemento actual es >= al anterior (para organizar de mayor a menor)
+            if (arr[index] >= arr[index - 1]) 
                 index++;
-            else {
+            else { //si es menor al anterior intercambia el menor hacia atrás y se decrementa el index
                 int temp = 0;
                 temp = arr[index];
                 arr[index] = arr[index - 1];

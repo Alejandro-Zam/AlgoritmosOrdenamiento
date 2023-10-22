@@ -2,76 +2,63 @@ package Algoritmos;
 
 //Obtenido de: https://www.geeksforgeeks.org/tree-sort/?ref=gcse
 public class TreeSort {
-    // Class containing left and
-    // right child of current
-    // node and key value
-    class Node
-    {
+    // Clase que declara la llave y los nodos izquierdo y derecho
+    class Node{
         int key;
         Node left, right;
 
-        public Node(int item)
-        {
+        public Node(int item){
             key = item;
             left = right = null;
         }
     }
 
-    // Root of BST
+    // Raíz del arbol binario de busqueda
     Node root;
 
     // Constructor
-    public TreeSort()
-    {
+    public TreeSort(){
         root = null;
     }
 
-    // This method mainly
-    // calls insertRec()
-    void insert(int key)
-    {
+    void insert(int key){
         root = insertRec(root, key);
     }
 
-    /* A recursive function to
-    insert a new key in BST */
-    Node insertRec(Node root, int key)
-    {
-
-        /* If the tree is empty,
-        return a new node */
-        if (root == null)
-        {
+    //función para ingresar un nuevo valor en el arbol binario
+    Node insertRec(Node root, int key){
+        if (root == null){ //si es el primer valor en el arbol se crea como el valor de la raíz
             root = new Node(key);
             return root;
         }
-
-        /* Otherwise, recur
-        down the tree */
+        //si el valor es menor al de la raíz va a la izquierda, si es mayor a la derecha
         if (key < root.key)
             root.left = insertRec(root.left, key);
         else if (key > root.key)
             root.right = insertRec(root.right, key);
 
-        /* return the root */
+        //retorna la raíz
         return root;
     }
 
-    // A function to do
-    // inorder traversal of BST
-    void inorderRec(Node root)
-    {
-        if (root != null)
-        {
-            inorderRec(root.left);
+    //funcion para imprimir el arbol binario
+    void inorderRec(Node root){
+        if (root != null){
+            inorderRec(root.left); //devuelve primero los menores y luego los mayores
             System.out.print(root.key + " ");
-            inorderRec(root.right);
+            inorderRec(root.right); 
         }
     }
-    public void treeins(int arr[])
-    {
-        for(int i = 0; i < arr.length; i++)
-        {
+    
+ 	//función que se llama en el main
+    public void treeSort(int arr[]){
+        for (int i = 0; i < arr.length; i++) {
+            insert(arr[i]);
+        }
+    }
+    
+    public void treeins(int arr[]){
+        for(int i = 0; i < arr.length; i++){
             insert(arr[i]);
         }
 

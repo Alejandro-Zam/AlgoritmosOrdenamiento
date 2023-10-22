@@ -124,7 +124,7 @@ public class MainController {
 		String orden = main.ordenarTiempos(tiempos, sorts);
 		txtAreaResultado.setText(orden);
 
-		System.out.println(orden);
+		//System.out.println(orden);
     }
 
     @FXML
@@ -167,10 +167,6 @@ public class MainController {
                 "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K"
         );
         BoxArreglo.setItems(arreglos);
-
-        ObservableList<String> arreglos2 = FXCollections.observableArrayList(
-                "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K"
-        );
-        BoxArreglo2.setItems(arreglos2);
+        BoxArreglo2.setItems(arreglos);
     }
 }
