@@ -1,6 +1,8 @@
 package App;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import Algoritmos.*;
@@ -46,8 +48,19 @@ public class Main extends Application {
 
 	public Long EjecutarAlgoritmo(String nameAlogrito, String arregloBuscar){
 
-		//Cambiar la ruta según donde tengan los arreglos
-		String ruta = "C:/Users/Felipe/Desktop/UNI/Algoritmos/Seguimiento/AlgoritmosOrdenamiento/src/Arreglos/"+arregloBuscar+".dat";
+		String rutaRelativa = "src/Arreglos/"+arregloBuscar+".dat";
+
+        // Convierte la ruta relativa en un objeto Path
+        Path rutaAbsoluta = Paths.get(rutaRelativa);
+
+        // Obtiene el directorio actual desde donde se ejecuta el programa
+        Path directorioActual = Paths.get(System.getProperty("user.dir"));
+
+        // Combina el directorio actual con la ruta relativa para obtener la ruta completa
+        Path rutaCompleta = directorioActual.resolve(rutaAbsoluta);
+
+        // Convierte la ruta completa en una cadena
+		String ruta = rutaCompleta.toString();
 		int[] arr = CrearArreglo.leerArregloDesdeArchivo(ruta);
 
 		int numAlgoritmo = obtenerNum(nameAlogrito);
@@ -122,7 +135,19 @@ public class Main extends Application {
 
 	public ArrayList<KeyValue> EjecutarOrden(String arreglo) {
 		ArrayList<KeyValue> sorts = new ArrayList<>();
-		String ruta = "C:/Users/Felipe/Desktop/UNI/Algoritmos/Seguimiento/AlgoritmosOrdenamiento/src/Arreglos/"+arreglo+".dat";
+		String rutaRelativa = "src/Arreglos/"+arreglo+".dat";
+
+        // Convierte la ruta relativa en un objeto Path
+        Path rutaAbsoluta = Paths.get(rutaRelativa);
+
+        // Obtiene el directorio actual desde donde se ejecuta el programa
+        Path directorioActual = Paths.get(System.getProperty("user.dir"));
+
+        // Combina el directorio actual con la ruta relativa para obtener la ruta completa
+        Path rutaCompleta = directorioActual.resolve(rutaAbsoluta);
+
+        // Convierte la ruta completa en una cadena
+		String ruta = rutaCompleta.toString();
 		long tiempoInicio, tiempoFin;
 
 		// Tree Sort 0
