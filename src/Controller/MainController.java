@@ -164,7 +164,7 @@ public class MainController {
     private void llenarComboBoxArreglos() {
 	//Poner el nombre de los arreglos que vayan a crear
         ObservableList<String> arreglos = FXCollections.observableArrayList(
-                "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K"
+        		 "Arreglo10K", "Arreglo20K", "Arreglo30K", "Arreglo40K", "Arreglo50K", "Arreglo60K", "Arreglo100K", "Arreglo500K", "Arreglo1M", "Arreglo2M"
         );
         BoxArreglo.setItems(arreglos);
         BoxArreglo2.setItems(arreglos);
