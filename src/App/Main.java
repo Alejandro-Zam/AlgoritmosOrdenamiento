@@ -193,7 +193,7 @@ public class Main extends Application {
 			tiempoFin = System.currentTimeMillis();
 			sorts.add(new KeyValue("Bitonic Sort", (tiempoFin - tiempoInicio)));
 
-			// Gnome Sort 9
+			//Gnome Sort 9
 			int[] arr9 = CrearArreglo.leerArregloDesdeArchivo(ruta);
 			tiempoInicio = System.currentTimeMillis();
 			GnomeSort.gnomeSort(arr9, arr9.length);
